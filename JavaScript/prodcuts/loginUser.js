@@ -1,4 +1,4 @@
-// import { doapiBody, urlapi } from "../sarverApi.js";
+// import { doapiBody, urlapi } from "./sarverApi";
 
 export const personalAreaForm = () => {
     onSubmitLogin()
