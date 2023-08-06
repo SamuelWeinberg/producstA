@@ -1,0 +1,164 @@
+[
+  {
+    "name": "home tools",
+    "price": 1450 ,
+    "id":"1",
+    "Description": "A collection of the best tools to renovate the house",
+    "img": "/img/Prodcuts1.jpg",
+    "deadline": "30/7/23",
+    "category":"tools"
+  },
+  {
+    "name":"contractor tool",
+    "price": 1350,
+    "id":"2",
+    "Description": "A collection of the best tools for a contractor",
+    "img": "/img/Prodcuts2.jpg",
+    "deadline": "5/8/23",
+    "category":"tools"
+  },
+  {
+    "name": "box of screws",
+    "price": 450,
+    "id":"3",
+    "Description": "A collection of the best screwdrivers for the home",
+    "img": "/img/Prodcuts3.jpg",
+    "deadline": "29/7/23",
+    "category":"tools"
+  },
+  {
+    "name": "box of screwss",
+    "price": 390,
+    "id":"4",
+    "Description": "A collection of the best screwdrivers to keep in the car",
+    "img": "/img/Prodcuts4.jpg",
+    "deadline": "25/7/23",
+    "category":"tools"
+  },
+  {
+    "name": "screws in a big box",
+    "price": 460,
+    "id":"5",
+    "Description": "A collection of screws with a flexible case",
+    "img": "/img/Prodcuts5.jpg",
+    "deadline": "2/8/23",
+    "category":"tools"
+  },
+  {
+    "name":"screws in a big boxs",
+    "price": 550,
+    "id":"6",
+    "Description": "Collection of screws with hard case",
+    "img": "/img/Prodcuts6.jpg",
+    "deadline": "28/7/23",
+    "category":"tools"
+  },
+  {
+    "name": "dreams",
+    "price": 85,
+    "id":"7",
+    "Description": "A thinking game for children aged 3",
+    "img": "/img/Pro-1.jpg ",
+    "deadline": "29/7/23",
+    "category": "game"
+  },
+  {
+    "name": "bull's eye",
+    "price": 90,
+    "id":"8",
+    "Description": "A thinking game for children aged 12",
+    "img": "/img/Pro-2.jpg",
+    "deadline": "1/8/23",
+    "category": "game"
+  },
+  {
+    "name": "hexagons",
+    "price": 105,
+    "id":"9",
+    "Description": "A thinking game for a group of children",
+    "img": "/img/Pro-3.jpg",
+    "deadline": "29/7/23",
+    "category": "game"
+  },
+  {
+    "name": "country city",
+    "price": 220,
+    "id":"10",
+    "Description": "A thinking game for adults",
+    "img": "/img/Pro-4.jpg",
+    "deadline": "26/7/23",
+    "category": "game"
+  },
+  {
+    "name": "tiko",
+    "price": 150,
+    "id":"11",
+    "Description": "A thinking game for a group of adults",
+    "img": "/img/Pro-5.jpg",
+    "deadline": "24/7/23",
+    "category": "game"
+  },
+  {
+    "name": "manipulate",
+    "price": 190,
+    "id":"12",
+    "Description": "A thinking game for all ages",
+    "img": "/img/Pro-6.jpg",
+    "deadline": "6/8/23",
+    "category": "game"
+  },
+  {
+    "name": "pan",
+    "price": 330,
+    "id":"13",
+    "Description": "A pan that is a must in every home",
+    "img": "/img/Prod-1.jpg ",
+    "deadline": "26/7/23",
+    "category": "kitchen"
+  },
+  {
+    "name": "pans",
+    "price":450,
+    "id":"14",
+    "Description": "A set of pans that are a must in every home",
+    "img": "/img/Prod-2.jpg",
+    "deadline": "26/7/23",
+    "category": "kitchen"
+  },
+  {
+    "name": "round pans" ,
+    "price": 760,
+    "id":"15",
+    "Description": "A set of strong pans",
+    "img": "/img/Prod-3.jpg",
+    "deadline": "6/8/23",
+    "category": "kitchen"
+  },
+  {
+    "name": "pans in shapes" ,
+    "price": 890,
+    "id":"16",
+    "Description": "A set of strong pans that are a must in every home",
+    "img": "/img/Prod-4.jpg",
+    "deadline": "25/7/23",
+    "category": "kitchen"
+  },
+  {
+    "name": "pans and pots" ,
+    "price": 950,
+    "id":"17",
+    "Description": "A set of frying pans and pots for every kitchen",
+    "img": "/img/Prod-5.jpg",
+    "deadline": "30/7/23",
+    "category": "kitchen"
+  },
+  {
+    "name": "round panss" ,
+    "price": 660,
+    "id":"18",
+    "Description": "A set of beautiful round pans",
+    "img": "/img/Prod-6.jpg",
+    "deadline": "22/7/23",
+    "category": "kitchen"
+  }  
+]

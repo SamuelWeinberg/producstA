@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/class.css">
+    <link rel="stylesheet" href="/css/details.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script defer  type="module" src="../JavaScript/prodcuts/loginUser.js"></script>
+</head>
+
+<body>
+    <script src="/JavaScript/headerFooter.js"></script>
+    <script defer type="module" src="/JavaScript/prodcuts/app.js"></script>
+    <special-header></special-header>
+    <div class="dark">
+        <div class="darkBox">
+            <img src="" id="ingDark" class="float-left w-50 mr-3">
+            <i class="fa-sharp fa-solid fa-xmark" id="btnDarkClas"></i>
+            <h2 id="name"></h2>
+            <div id="price">price:</div>
+            <div id="deadline"></div>
+            <div id="Description"></div>
+            <div>
+                <button class="btn-dark" id="plusBtn">+</button>
+                <input type="number" id="quantity" min="1" value="1" class="col-lg-1">
+                <button class="btn-dark" id="minusBtn">-</button><br>
+                <button class="btn-primary mt-1 mb-1" id="btnAddCart">Add to cart</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="m-2">
+            <div class="w-100 " id="searchDesign">
+                <div class="SearchLocation w-100">
+                    <input type="search" class="form-control myInput  mr-1 " id="myInput" placeholder="Search ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </div>
+                <select class="form-control ml-5" id="searchValue">
+                    <option value="">all</option>
+                    <option value="tools">tools </option>
+                    <option value="game">game</option>
+                    <option value="kitchen">kitchen </option>
+                </select>
+            </div>
+        </div>
+
+
+        <div id="cartModal" class="cart-modal">
+
+            <div class="cart-modal-content">
+                <i class="fa-sharp fa-solid fa-xmark" id="checkoutButton"></i>
+                <h2>Your Cart</h2>
+                <ul id="cartItems"></ul>
+                <div>
+                    <div id="listProdcts" class="namu"></div>
+                </div>
+            </div>
+        </div>
+     
+        <form class="row g-3 privateArea" id="privateArea" >
+            <div class="">
+             <h2 class="m-3" >log in</h2><i class="fa-sharp fa-solid fa-xmark" id="closeLogIn"></i>
+            <div class="col-9">
+              <label for="inputEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="inputEmail">
+            </div>
+            <div class="col-9">
+              <label for="inputPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" name="pass" id="inputPassword">
+            </div>
+            <button class="btn btn-danger ml-4 mt-2" type="submit" id="btnLogIn">log in</button>
+            <button class="btn btn-group ml-4 mt-2" id="btnSinup">sinup</button>
+            </div>
+        </form>
+        <main>
+            <h2></h2>
+            <div class="row" id="row"> </div>
+        </main>
+    </div>
+    <special-footer></special-footer>
+</body>
+
+</html>

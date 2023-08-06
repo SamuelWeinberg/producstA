@@ -1,0 +1,21 @@
+
+p .matn-l{
+    border: 8px seagreen;
+    min-height: 60px;
+}
+.byb{
+  display: flex;
+margin: 6px;
+}
+/*
+.text-section{
+    flex: 1;
+}*/
+.container{
+ /* זה שם את הטקסט בצד התמונה*/
+     flex: 1 ;
+     margin: 6px;
+/* זה מישר את הטסט*/
+     text-align: justify;
+      
+}

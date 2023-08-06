@@ -1,0 +1,12 @@
+
+  h3, .btn {
+    display: inline-block;
+    margin-right: 25px;
+  }
+  .btn{
+    margin-left: 10px;
+    margin-bottom: 15px;
+    position: absolute;
+    right: 0;
+  }
+  

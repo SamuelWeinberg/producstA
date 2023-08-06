@@ -1,0 +1,60 @@
+body{
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+   position: relative;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+nav{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 6px;
+}
+
+
+header{
+    min-height: 80px;
+    background:rgb(202, 202, 210) ;
+    color: black;
+}
+header .non-mt a{
+  
+    color: aliceblue;
+   padding: 2px 14px;
+}
+p{
+
+   background:white;
+   color: black;
+}
+footer{
+    min-height: 80px;
+    background:rgb(202, 202, 210);
+      color: black;
+      flex-shrink: 0;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 6px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      clear: both;
+      height: 80px;
+  } 
+  footer .momr-n a{
+      color: aliceblue;
+      padding: 12px 12px;
+      text-align: center;
+      padding-top: 22px;
+      padding-bottom: 5px;
+  }
+  .footer{
+    height: 80px;
+  }
+ 
+ 

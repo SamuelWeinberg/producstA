@@ -1,0 +1,23 @@
+#searchDesign{
+    display: flex;
+    
+}
+#searchDesign .SearchLocation{
+    position: relative;
+}
+
+#searchDesign .SearchLocation svg {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}
+#checkoutButton{
+    position: fixed;
+    right: 23px;
+    /* הכפתור שסוגר את החלון של העגלה  */
+}
+#btnDarkClas{
+    position: relative;
+    right: -273px; 
+    /* הכפתור שסגור את החלון של הפרטים הנוספים על המוצר  */
+}
