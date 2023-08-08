@@ -1,3 +1,2 @@
 .vscode
 node_modules
-// await mongoose.connect('mongodb+srv://Samuel:fnLZMB5WZpHLgebV@atlascluster.ri55fhf.mongodb.net/products');
