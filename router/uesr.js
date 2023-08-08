@@ -1,5 +1,5 @@
 const express = require('express');
-const { userModel, validUser, validLogainUser, creatTokn } = require('../moduls/userModel');
+const {userModel, validUser, validLogainUser, creatTokn} = require('../moduls/userModel');
 const bcrypt = require('bcrypt');
 const _ = require('lodash')
 const jwt = require('jsonwebtoken')
@@ -22,7 +22,7 @@ router.get('/search', (req, res) => {
         res.json(data)
     })
     .catch(err => {
-        res.json(err)
+        res.status(400).json(err)
     })
 })
 
@@ -36,7 +36,7 @@ router.get('/info', athToken, (req, res) => {
 router.post('/login', async (req, res) => {
     let validbody = validLogainUser(req.body);
     if (validbody.error) {
-        return res.json(validbody.error.details);
+        return res.status(400).json(validbody.error.details);
     }
     try {
         let userData = await userModel.findOne({ email: req.body.email });
@@ -51,14 +51,14 @@ router.post('/login', async (req, res) => {
         res.json({ token: myToken });
     } catch (err) {
         console.log(err);
-        res.json('err', err);
+        res.status(400).json('err', err);
     }
 });
 
 router.post('/add', async (req, res) => {
     let validbody = validUser(req.body);
     if (validbody.error) {
-        return res.json(validbody.error.details);
+        return res.status(400).json(validbody.error.details);
     }
     try {
         let salt = await bcrypt.genSalt(10);
@@ -67,32 +67,32 @@ router.post('/add', async (req, res) => {
         res.json(_.pick(data[0], ['email', 'name', 'id', 'dataCreated']))
     }
     catch (err) {
-        res.json("err", err)
+        res.status(400).json("err", err)
     }
 })
 
 router.put('/adit', (req, res) => {
     let validbody = validPass(req.body)
     if (validbody.error) {
-        return res.json(validbody.error.details);
+        return res.status(400).json(validbody.error.details);
     }
     userModel.updateOne({ _id: req.body._id }, req.body)
         .then(data => {
             res.json(data)
         })
         .catch(err => {
-            res.json(err)
+            res.status(400).json(err)
         })
 })
 
-router.delete('/dal/:dalit', (req, res) => {
+router.delete('/dal/:idDal', (req, res) => {
     let idDal = req.params.idDal
     userModel.deleteOne({ _id: idDal })
         .then(data => {
             res.json(data)
         })
         .catch(err => {
-            res.json(err)
+            res.status(400).json(err)
         })
 })
 

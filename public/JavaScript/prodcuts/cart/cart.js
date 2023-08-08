@@ -1,6 +1,9 @@
 import {personalAreaForm } from "../loginUser.js";
+import { doApiBody ,urlapi } from "../sarverApi.js";
+import { signUserdb } from "../signUser.js";
 
 let cartData = JSON.parse(localStorage['cart']||'[]');
+
 
 export const renderCart = () => {
   $('#listProdcts').empty(); 
@@ -41,6 +44,7 @@ export const addToCart = (product, quantity) => {
   }
   renderCart();
   saveCartToLocalStorage();
+  cartUserdb()
 };
 
 const viewEvents = () => {
@@ -69,10 +73,35 @@ const changeQuantity = (e, quantity) => {
 
 const saveCartToLocalStorage = () => {
   localStorage.setItem("cart" ,JSON.stringify(cartData))
+  
 }
 
 export const showPersonalArea = () => {
   $('#iconUesr').on('click', ()=> $('#privateArea').css('display','flex'))
   $('#closeLogIn').on('click',()=> $('#privateArea').css('display','none'))
+  signUserdb() 
   personalAreaForm()
+  showSignOn()
 }
+export const showSignOn = () => {
+  $("#btnSinup").on('click', () => {
+      $("#privateArea").css("display", "none");
+      $("#sinUpUser").css("display", "flex");
+  });
+  $('#closeSign').on('click', () =>  $("#sinUpUser").css("display", "none") )
+};
+
+
+
+export const cartUserdb = () => {
+  let url = urlapi + '/cart/add';
+  const body = cartData[0]?.product
+  delete body._id
+  doApiBody(url, "POST", body)
+      .then(data => {
+          console.log(data);
+      })
+      ;
+  }
+   
+ 

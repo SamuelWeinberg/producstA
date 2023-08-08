@@ -1,7 +1,7 @@
 
-export const doapiBody = async (url,method,_data) => {
+export const doApiBody = async (url,method,_data) => {
     try{
-        let resp = await fetch(url,{
+        let resp = await fetch(url, {
             method:method,
             body:JSON.stringify(_data),
             headers:{'content-type':'application/json'}
@@ -14,4 +14,4 @@ export const doapiBody = async (url,method,_data) => {
     }
 }
 
-export const urlapi = ' http://loclhost:3000'
+export const urlapi = 'http://localhost:3000';

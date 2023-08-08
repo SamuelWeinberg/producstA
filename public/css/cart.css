@@ -47,7 +47,7 @@
   width: 50px;
   text-align: center;
 }
-.privateArea{
+#privateArea{
   display: none;
   position: fixed;
   z-index: 9;
@@ -75,9 +75,20 @@
   top: 7px;
   color: #fefefe;
 }
-label.errer{
-  color: red;
+#sinUpUser{
+  display: none;
+  position: fixed;
+  z-index: 9;
+  overflow: auto;
+  background-color: #fefefe;
+  min-height: 390px;
+  width: 270px;
+  border: 1px solid #0b0b0b;
+  top: 80px;
+  left:16px ;
 }
-input[arlia-invalid="true"]{
-  background: #fff;
+#closeSign{
+  position: relative;
+  left: 226px;
+  top: -45px;
 }

@@ -1,11 +1,13 @@
 const indexR = require("./index")
 const userR = require("./uesr")
 const productsR = require("./products")
+const cartR = require('./certUser')
 
 exports.roterInit=(app) => {
     app.use('/',indexR)
     app.use('/user',userR)
     app.use('/products',productsR)
+    app.use('/cart',cartR)
 
     app.use((req,res)=>{
         res.json({mas:'404 not fond'})

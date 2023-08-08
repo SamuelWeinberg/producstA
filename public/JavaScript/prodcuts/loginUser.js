@@ -1,7 +1,6 @@
-// import { doapiBody, urlapi } from "./sarverApi";
+import { doApiBody, urlapi } from "./sarverApi.js";
 
 export const personalAreaForm = () => {
-    onSubmitLogin()
     $('#privateArea').validate({
         rules: {
             email: {
@@ -10,7 +9,7 @@ export const personalAreaForm = () => {
             },
             pass: {
                 required: true,
-                minlength: 2
+                minlength: 3
             }
         },
         submitHandler: (form) => {
@@ -18,16 +17,13 @@ export const personalAreaForm = () => {
                 email: $('#inputEmail').val(),
                 pass: $('#inputPassword').val()
             }
-            console.log(bodyData);
-            // let url = urlapi + '/user/login';
-            // doapiBody(url, "POST", bodyData)
-            //     .then(data => {
-            //         console.log(data);
-            //     })
+            let url = urlapi + '/user/login';
+            doApiBody(url, "POST", bodyData)
+                .then(data => {
+                    console.log(data.token);
+                    localStorage.setItem("tok",data.token)
+                })
+                console.log(bodyData);
         }
     });
 };
-
-const onSubmitLogin = () => {
-    $('#privateArea').on('submit', (e) => e.preventDefault())
-}
