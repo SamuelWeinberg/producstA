@@ -28,7 +28,8 @@ export const signUserdb = () => {
                 .then(data => {
                     console.log(data);
                 })
-                console.log(bodyData);
+                $("#sinUpUser").css("display", "none");
+                $("#privateArea").css("display", "flex")
         }
     });
 };

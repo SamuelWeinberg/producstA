@@ -1,5 +1,5 @@
 import {personalAreaForm } from "../loginUser.js";
-import { doApiBody ,urlapi } from "../sarverApi.js";
+import {  doApiBody,urlapi } from "../sarverApi.js";
 import { signUserdb } from "../signUser.js";
 
 let cartData = JSON.parse(localStorage['cart']||'[]');
@@ -93,15 +93,18 @@ export const showSignOn = () => {
 
 
 
+
 export const cartUserdb = () => {
-  let url = urlapi + '/cart/add';
-  const body = cartData[0]?.product
-  delete body._id
-  doApiBody(url, "POST", body)
-      .then(data => {
-          console.log(data);
-      })
-      ;
-  }
-   
+ let url = urlapi + '/cart/add';
+ const product = cartData[cartData.length - 1].product;
+  const body = {
+    name: product.name,
+    id: product.id,
+  };
  
+    doApiBody(url, "POST",body)
+        .then(data => {
+            console.log(product);
+        });
+}
+   

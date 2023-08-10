@@ -21,8 +21,9 @@ export const personalAreaForm = () => {
             doApiBody(url, "POST", bodyData)
                 .then(data => {
                     console.log(data.token);
-                    localStorage.setItem("tok",data.token)
+                    localStorage.setItem("token",data.token)
                 })
+                $("#privateArea").css("display", "none")
                 console.log(bodyData);
         }
     });

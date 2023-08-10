@@ -1,5 +1,5 @@
 const express = require('express');
-const { cartModel  ,validUser, validLogainUser,  } = require('../moduls/cartModel');
+const { cartModel  ,validUser  } = require('../moduls/cartModel');
 const bcrypt = require('bcrypt');
 const _ = require('lodash')
 const jwt = require('jsonwebtoken')
@@ -34,23 +34,24 @@ router.get('/info', athToken, (req, res) => {
         })
 });
 
-
-router.post('/add', async (req, res) => {
+ 
+router.post('/add',athToken,  async (req, res) => {
    
+   req.body.userId = req.module._id
     let validbody = validUser(req.body);
     if (validbody.error) {
         return res.status(400).json(validbody.error.details);
     }
     try {
         let data = await cartModel.insertMany([req.body])
-        res.json(_.pick(data[0], ['deadline', 'img', 'id', 'dataCreated','price','category']))
+        res.json(data);
     }
     catch (err) {
         res.status(400).json(err)
     }
-})
+});
 
-router.put('/adit', (req, res) => {
+router.put('/edit', (req, res) => {
     let validbody = validPass(req.body)
     if (validbody.error) {
         return res.status(400).json(validbody.error.details);
