@@ -18,10 +18,7 @@ const productsSchema = new mongoose.Schema({
 });
 
 exports.productsModel = mongoose.model('products',productsSchema)
-exports.creatTokn = (email,_id) => {
-    let nweToken = jwt.sign({email:email,_id:_id},"samuel12",{expiresIn:'60mins'})
-    return nweToken
-}
+
 
 exports.validUser = (userbody) =>{
     let schema = joi.object({

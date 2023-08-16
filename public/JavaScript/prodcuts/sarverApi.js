@@ -1,4 +1,5 @@
 
+
 export const doApiBody = async (url,method,_data) => {
     try{
         let resp = await fetch(url, {
@@ -16,3 +17,16 @@ export const doApiBody = async (url,method,_data) => {
 }
 
 export const urlapi = 'http://localhost:3000';
+
+export const doApiGet = async (url) =>{
+    try{
+        let resp = await fetch(url,{
+            headers:{'x-auth-token': localStorage['token']}  
+        })
+        let data = await resp.json()
+        return data
+    }
+    catch(err){
+        return err
+    }
+}

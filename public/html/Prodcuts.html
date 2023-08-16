@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
-    <script defer  type="module" src="../JavaScript/prodcuts/loginUser.js"></script>
-    <script defer  type="module" src="../JavaScript/prodcuts/signUser.js"></script>
+    <script defer type="module" src="../JavaScript/prodcuts/loginUser.js"></script>
+    <script defer type="module" src="../JavaScript/prodcuts/signUser.js"></script>
 </head>
 
 <body>
@@ -72,43 +72,45 @@
                 </div>
             </div>
         </div>
-     
-        <form class="row g-3 privateArea" id="privateArea" >
+
+        <form class="row g-3 privateArea" id="privateArea">
             <div class="">
-             <h2 class="m-3" >log in</h2><i class="fa-sharp fa-solid fa-xmark" id="closeLogIn"></i>
-            <div class="col-9">
-              <label for="inputEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" name="email" id="inputEmail">
-            </div>
-            <div class="col-9">
-              <label for="inputPassword" class="form-label">Password</label>
-              <input type="password" class="form-control" name="pass" id="inputPassword">
-            </div>
-            <button class="btn btn-danger ml-4 mt-2" type="submit" id="btnLogIn">log in</button>
-            <a href="#" class="btn btn-group ml-4 mt-2" id="btnSinup">sinup</a>
+                <h2 class="m-3">log in</h2><i class="fa-sharp fa-solid fa-xmark" id="closeLogIn"></i>
+                <div class="col-9">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" id="inputEmail">
+                </div>
+                <div class="col-9">
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="pass" id="inputPassword">
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-danger ml-4 mt-2" type="submit" id="btnLogIn">log in</button>
+                    <a href="#" class=" " id="logOut">log out</a>
+                    <a href="#" class="btn btn-group ml-4 mt-2" id="btnSinup">sinup</a>
+                </div>
             </div>
         </form>
 
-        <form class="row sinUpUser" id="sinUpUser" >
+        <form class="row sinUpUser" id="sinUpUser">
             <div class="">
-             <h2 class="m-3" >sign on</h2> <i class="fa-sharp fa-solid fa-xmark" id="closeSign"></i>
-             <div class="col-9">
-                <label for="inputName" class="form-label">fullname</label>
-                <input type="text" class="form-control" name="name" id="inputName">
-              </div>
-            <div class="col-9 mb-2">
-              <label for="inputEmailUser" class="form-label">Email</label>
-              <input type="email" class="form-control" name="email" id="inputEmailUser">
-            </div>
-            <div class="col-9 mb-2">
-              <label for="inputPasswordUser" class="form-label">Password</label>
-              <input type="password" class="form-control" name="pass" id="inputPasswordUser">
-            </div>
-
-            <button class="btn btn-danger ml-4 mt-2" type="submit" id="btnSignOn">sign on</button>
-        
+                <h2 class="m-3">sign on</h2> <i class="fa-sharp fa-solid fa-xmark" id="closeSign"></i>
+                <div class="col-9">
+                    <label for="inputName" class="form-label">fullname</label>
+                    <input type="text" class="form-control" name="name" id="inputName">
+                </div>
+                <div class="col-9 mb-2">
+                    <label for="inputEmailUser" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" id="inputEmailUser">
+                </div>
+                <div class="col-9 mb-2">
+                    <label for="inputPasswordUser" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="pass" id="inputPasswordUser">
+                </div>
+                <button class="btn btn-danger ml-4 mt-2" type="submit" id="btnSignOn">sign on</button>
             </div>
         </form>
+
 
         <main>
             <h2></h2>

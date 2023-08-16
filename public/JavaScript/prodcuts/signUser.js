@@ -26,10 +26,9 @@ export const signUserdb = () => {
             let url = urlapi + '/user/add';
             doApiBody(url, "POST", bodyData)
                 .then(data => {
-                    console.log(data);
+                    $("#sinUpUser").css("display", "none");
+                    $("#privateArea").css("display", "flex")
                 })
-                $("#sinUpUser").css("display", "none");
-                $("#privateArea").css("display", "flex")
-        }
+            }
     });
 };

@@ -4,25 +4,19 @@ const mongoose = require('mongoose')
 
 
 const cartSchema = new mongoose.Schema({
-    name: String,
-    id: String,
-    userId:String,
-    amount:Number,
-    dataCreated: {
-        type: Date,
-        default: Date.now()
-    }
+    productId: String,
+    userId: String,
+    quantity: Number,
 });
 
-exports.cartModel = mongoose.model('cartUsers',cartSchema)
+exports.cartModel = mongoose.model('cartusers',cartSchema)
 
 
 exports.validUser = (userbody) =>{
     let schema = joi.object({
-     name:joi.string().min(2).max(100).required(),
-     id:joi.string().min(1).max(100).required(),
-     userId:joi.string().required(), 
-     amount:joi.number()         
+     productId: joi.string().min(1).max(100).required(),
+     userId: joi.string().required(), 
+     quantity: joi.number()         
     })
     return schema.validate(userbody)
 }

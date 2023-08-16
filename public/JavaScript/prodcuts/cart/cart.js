@@ -1,6 +1,7 @@
 import {personalAreaForm } from "../loginUser.js";
-import {  doApiBody,urlapi } from "../sarverApi.js";
+import {  doApiGet,urlapi } from "../sarverApi.js";
 import { signUserdb } from "../signUser.js";
+
 
 let cartData = JSON.parse(localStorage['cart']||'[]');
 
@@ -44,7 +45,8 @@ export const addToCart = (product, quantity) => {
   }
   renderCart();
   saveCartToLocalStorage();
-  cartUserdb()
+  // cartUserdb()
+  userName()
 };
 
 const viewEvents = () => {
@@ -73,15 +75,15 @@ const changeQuantity = (e, quantity) => {
 
 const saveCartToLocalStorage = () => {
   localStorage.setItem("cart" ,JSON.stringify(cartData))
-  
 }
 
 export const showPersonalArea = () => {
   $('#iconUesr').on('click', ()=> $('#privateArea').css('display','flex'))
-  $('#closeLogIn').on('click',()=> $('#privateArea').css('display','none'))
-  signUserdb() 
-  personalAreaForm()
-  showSignOn()
+  $('#closeLogIn').on('click',()=>{$('#privateArea').css('display','none'); userName()});
+  signUserdb();
+  personalAreaForm();
+  showSignOn();
+  clossUser();
 }
 export const showSignOn = () => {
   $("#btnSinup").on('click', () => {
@@ -91,20 +93,44 @@ export const showSignOn = () => {
   $('#closeSign').on('click', () =>  $("#sinUpUser").css("display", "none") )
 };
 
-
-
-
-export const cartUserdb = () => {
- let url = urlapi + '/cart/add';
- const product = cartData[cartData.length - 1].product;
-  const body = {
-    name: product.name,
-    id: product.id,
-  };
- 
-    doApiBody(url, "POST",body)
-        .then(data => {
-            console.log(product);
-        });
+const clossUser = () =>{
+  $('#logOut').on('click',()=> {
+  $("#privateArea").css("display", "none");
+  localStorage.removeItem('token');
+  localStorage.removeItem('name');
+  userName()
+  });
 }
+
+// export const cartUserdb = () => {
+//  let url = urlapi + '/cart/add';
+//  const product = cartData[cartData.length - 1].product;
+//   const body = {
+//     productId: product._id,
+//   };
+//     doApiBody(url, "POST",body)
+//         .then(data => {
+//           cartData = data;
+//           renderCart();
+//         });
+        
+// }
    
+export const userName = () =>{
+ if(localStorage['token']){
+ $('#logOut').css('display','flex')
+ $('#emailLink').html(localStorage['name']).css( 'display', 'block');
+ }else{
+  $('#logOut').css('display','none')
+  $('#emailLink').css( 'display', 'none')
+ }
+}
+export const showCartUser = () =>{
+  let url = urlapi + '/cart/userProducts';
+  doApiGet(url)
+    .then(data => {
+      // cartData = data;
+      console.log(data)
+      renderCart();
+    })
+  }

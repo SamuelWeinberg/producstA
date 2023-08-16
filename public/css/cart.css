@@ -92,3 +92,12 @@
   left: 226px;
   top: -45px;
 }
+#emailLink{
+  position: absolute;
+  top: 30px;
+  display: none
+}
+#logOut{
+  display: none;
+  align-items: center;
+}

@@ -1,8 +1,6 @@
 const express = require('express');
-const { productsModel, validUser, validLogainUser, creatTokn } = require('../moduls/productsModel');
-const bcrypt = require('bcrypt');
+const { productsModel, validUser,   } = require('../moduls/productsModel');
 const _ = require('lodash')
-const jwt = require('jsonwebtoken')
 const router = express.Router();
 
 const {athToken} = require('../midluer/athToken')
@@ -65,27 +63,7 @@ router.post('/add', async (req, res) => {
 //     }
 // })
 
-router.post('/login', async (req, res) => {
-    let validbody = validLogainUser(req.body);
-    if (validbody.error) {
-        return res.json(validbody.error.details);
-    }
-    try {
-        let productsData = await productsModel.findOne({ email: req.body.email });
-        if (!userData) {
-            return res.json({ msg: "user not found" });
-        }
-        let validPass = await bcrypt.compare(req.body.pass, productsData.pass);
-        if (!validPass) {
-            return res.json({ msg: "password not match" });
-        }
-        let myToken = creatTokn(productsData.email, userData.id);
-        res.json({ token: myToken });
-    } catch (err) {
-        console.log(err);
-        res.json('err', err);
-    }
-});
+
 
 router.put('/adit', (req, res) => {
     let validbody = validPass(req.body)

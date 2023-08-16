@@ -47,8 +47,9 @@ router.post('/login', async (req, res) => {
         if (!validPass) {
             return res.json({ msg: "password not match" });
         }
-        let myToken = creatTokn(userData.email, userData._id);
-        res.json({ token: myToken });
+        let myToken = creatTokn(userData.email, userData._id ,userData.name);
+        res.json({ token: myToken,name: userData.name });
+       
     } catch (err) {
         console.log(err);
         res.status(400).json('err', err);

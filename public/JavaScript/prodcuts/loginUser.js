@@ -1,3 +1,4 @@
+import {  showCartUser } from "./cart/cart.js";
 import { doApiBody, urlapi } from "./sarverApi.js";
 
 export const personalAreaForm = () => {
@@ -20,11 +21,12 @@ export const personalAreaForm = () => {
             let url = urlapi + '/user/login';
             doApiBody(url, "POST", bodyData)
                 .then(data => {
-                    console.log(data.token);
+                    localStorage.setItem('name',data.name)
                     localStorage.setItem("token",data.token)
+                    showCartUser()
                 })
                 $("#privateArea").css("display", "none")
-                console.log(bodyData);
+                // userName()   
         }
     });
 };

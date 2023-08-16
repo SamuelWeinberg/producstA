@@ -7,7 +7,7 @@ exports.athToken = (req, res, next) => {
     }
     try {
         let decTocToken = jwt.verify(getToken, "samuel12");
-        req.module = { email: decTocToken.email, _id: decTocToken._id };
+        req.user = { email: decTocToken.email, _id: decTocToken._id, name: decTocToken.name };
         next();
     } catch (err) {
         return res.status(400).json({ mas:'invalid token'});

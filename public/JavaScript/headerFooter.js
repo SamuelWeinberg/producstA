@@ -3,9 +3,10 @@ class specialHeader extends HTMLElement {
         this.innerHTML = `
         <header class="">
         <nav class="container-fluid align-items-center text-center img-fluid ">
-            <div class="non-mt">
+            <div class="non-mt ">
                 <i id="iconUesr" class="fa-solid fa-user "></i>
-               <img src="../img/h22.png" width="80px">
+                <a id="emailLink" href="#"></a>
+                <img src="../img/h22.png" width="80px">
                 <a href="../index.html"> Home</a>
                 <a href="../html/AbutUs.html">Abut us</a>
                 <a href="../html/Contact.html">Contact </a>
@@ -38,3 +39,6 @@ class specialFooter extends HTMLElement {
 }
 customElements.define('special-header', specialHeader)
 customElements.define('special-footer', specialFooter)
+ 
+
+
